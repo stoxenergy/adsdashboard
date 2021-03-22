@@ -33,6 +33,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 .media:hover {
 	background-color: #FBFBFB;
 }
+.logo {
+    height: 2rem;
+    margin: .5rem;
+}
 iframe {	
     border: none;
     width: 350px;
