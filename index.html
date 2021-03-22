@@ -27,7 +27,7 @@
 	<div class="shadow-sm bg-white rounded-lg">
 		{{#each this.products as |product|}}
 			<div class="media border-bottom p-3" id="product-{{product.id}}">
-				<iframe src="{{product.adPreviewUrl:MobileFeed}}"></iframe>
+				<div class="iframediv"><iframe src="{{product.adPreviewUrl:MobileFeed}}"></iframe></div>
 				<div class="media-body">
 					<h6 class="m-0">Spent: {{product.cost}}</h6>
 					<p class="m-0">Revenue: {{product.websitePurchasesConversionValue}}</p>
