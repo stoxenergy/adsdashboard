@@ -1,3 +1,8 @@
 .media:hover {
 	background-color: #FBFBFB;
 }
+iframe {	
+    border: none;
+    width: 350px;
+    height: 600px;
+}
