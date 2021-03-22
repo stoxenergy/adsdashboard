@@ -43,7 +43,7 @@
 	<div class="shadow-sm bg-white rounded-lg">
 		{{#each this.products as |product|}}
 			<div class="media border-bottom p-3" id="product-{{product.id}}">
-				<img src="{{product.iconUrl}}" width="50" class="mr-3">
+				<img src="{{product.adPreviewUrl:MobileFeed}}" width="50" class="mr-3">
 				<div class="media-body">
 					<h6 class="m-0">
 						<a href="{{product.website}}" target="_blank">{{product.name}}</a>
