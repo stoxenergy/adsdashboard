@@ -1,3 +1,35 @@
+@font-face{
+  font-family:"Maison Neue";
+  font-weight:600;
+  font-style:normal;
+  src:url("//cdn.shopify.com/s/files/1/0079/4332/3745/t/16/assets/MaisonNeue-Bold.woff2?v=2845476653977341740") format("woff2"),
+    url("//cdn.shopify.com/s/files/1/0079/4332/3745/t/16/assets/MaisonNeue-Bold.woff?v=11126286900686431312") format("woff")
+}
+@font-face{
+  font-family:"Maison Neue";
+  font-weight:400;
+  font-style:normal;
+  src:url("//cdn.shopify.com/s/files/1/0079/4332/3745/t/16/assets/MaisonNeue-Medium.woff2?v=6668550285941009652") format("woff2"),
+    url("//cdn.shopify.com/s/files/1/0079/4332/3745/t/16/assets/MaisonNeue-Medium.woff?v=2019320086954883560") format("woff")
+}
+@font-face{
+  font-family:"Maison Neue";
+  font-weight:300;
+  font-style:normal;
+  src:url("//cdn.shopify.com/s/files/1/0079/4332/3745/t/16/assets/MaisonNeue-Book.woff2?v=1172086911026956837") format("woff2"),
+    url("//cdn.shopify.com/s/files/1/0079/4332/3745/t/16/assets/MaisonNeue-Book.woff?v=12846004491031634789") format("woff")
+}
+body,input,textarea,button,select {
+  font-family:"Maison Neue",sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: black;
+  font-weight: 300;
+  letter-spacing: .025em;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family:"Maison Neue",sans-serif; 
+}
 .media:hover {
 	background-color: #FBFBFB;
 }
