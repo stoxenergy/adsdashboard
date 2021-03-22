@@ -23,16 +23,15 @@
 
 <!-- Template for the products -->
 <script id="products-template" type="text/x-handlebars-template">
-	<h3>{{title}}</h3>
-	<img src="/images/facebook_ads.svg">
+	<img class="fblogo" src="/images/facebook_ads.svg">
 	<div class="shadow-sm bg-white rounded-lg">
 		{{#each this.products as |product|}}
 			<div class="media border-bottom p-3" id="product-{{product.id}}">
 				<iframe src="{{product.adPreviewUrl:MobileFeed}}"></iframe>
 				<div class="media-body">
 					<h6 class="m-0">Spent: {{product.cost}}</h6>
-					<p class="m-0">{{product.shortDescription}}</p>
-					<p class="m-0 text-muted"><small>{{product.category}}</small></p>
+					<p class="m-0">Revenue: {{product.websitePurchasesConversionValue}}</p>
+					<p class="m-0">Spent: {{product.cost}}</p>
 				</div>
 			</div>
 		{{/each}}
