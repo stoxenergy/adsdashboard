@@ -51,9 +51,6 @@
 					<p class="m-0">{{product.shortDescription}}</p>
 					<p class="m-0 text-muted"><small>{{product.category}}</small></p>
 				</div>
-				<button class="btn btn-outline-primary" onclick="upvoteProduct({{product.id}});" {{#if product.hasVoted}}disabled{{/if}}>
-					&#x21e7; {{product.votes}}
-				</button>
 			</div>
 		{{/each}}
 		{{#unless this.products}}
