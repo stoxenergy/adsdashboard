@@ -1,4 +1,5 @@
 var products = null;
+var sport_female = null;
 var categories = null;
 var title = null;
 
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 var projectUrl = 'https://api.sheety.co/a754727717e29386b98b0920c8596429/facebookAdsData';
 
 function loadProducts() {
-	fetch(projectUrl + '/products')
+	fetch(projectUrl + '/sport_female')
 	.then((response) => response.json())
 	.then(json => {
 		this.products = json.products.sort((a, b) => {
