@@ -17,7 +17,7 @@ function loadProducts() {
 	fetch(projectUrl + '/sportsFemale')
 	.then((response) => response.json())
 	.then(json => {
-		this.products = json.products.sort((a, b) => {
+		this.products = json.sportsFemale.sort((a, b) => {
 			return a.votes < b.votes;
 		})
 		showAllProducts();
