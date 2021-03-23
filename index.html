@@ -34,16 +34,13 @@
 				<div class="_7jv-"><i alt="" class="img sp_TCIOV7hgjyW_2x sx_f405b0"></i><span style="font-family: -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; line-height: 16px; letter-spacing: normal; overflow-wrap: normal; text-align: left; color: rgb(28, 30, 33);"><div class="_9cd2">Active</div></span></div>
 		    	<p class="m-0">Campaign: {{product.campaignName}}</p>
 			<p class="m-0">Ad Set: {{product.adSetName}}</p>
+			<p class="m-0">Spent: {{product.cost}}</p>
+			<p class="m-0">Revenue: {{product.websitePurchasesConversionValue}}</p>
+			<p class="m-0">ROAS: {{product.roas}}</p>
 			</div>
 			</div>
 		<div class="iframediv"><iframe src="{{product.adPreviewUrl:MobileFeed}}"></iframe></div>
-			<div class="media p-3" id="product-{{product.id}}">
-				<div class="media-body">				
-					<p class="m-0">Spent: {{product.cost}}</p>
-					<p class="m-0">Revenue: {{product.websitePurchasesConversionValue}}</p>
-					<p class="m-0">ROAS: {{product.roas}}</p>
-				</div>
-			</div></div>
+			</div>
 		</div>
 		{{/each}}
 		{{#unless this.products}}
