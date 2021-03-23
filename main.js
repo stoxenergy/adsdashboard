@@ -24,15 +24,6 @@ function loadProducts() {
 	});
 }
 
-function loadCategories() {
-	fetch(projectUrl + '/categories')
-	.then((response) => response.json())
-	.then(json => {
-		this.categories = json.categories;
-		drawCategories();
-	})
-}
-
 function drawProducts(products) {
 	var template = Handlebars.compile(document.getElementById("products-template").innerHTML);
 	document.getElementById('products-container').innerHTML = template({
@@ -41,39 +32,7 @@ function drawProducts(products) {
 	});
 }
 
-function drawCategories() {
-	var template = Handlebars.compile(document.getElementById("menu-template").innerHTML);
-	console.log('draw ', this.products);
-	document.getElementById('menu-container').innerHTML = template(this.categories);
-}
-
 function showAllProducts() {
 	this.title = "All Products";
 	drawProducts(this.products);
-}
-
-function showCategory(category) {
-	this.title = category;
-	let filteredProducts = this.products.filter(product => {
-		return product.category == category;
-	});
-	drawProducts(filteredProducts);
-}
-
-function upvoteProduct(id) {
-	let product = this.products.find(product => {
-		return product.id == id;
-	});
-	product.votes = product.votes + 1;
-	product.hasVoted = true;
-	
-	let headers = new Headers();
-	headers.set('content-type', 'application/json');
-	fetch(projectUrl + '/products/' + id, {
-		method: 'PUT',
-		body: JSON.stringify({ product: product }),
-		headers: headers
-	});
-	
-	showAllProducts();
 }
