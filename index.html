@@ -24,10 +24,10 @@
 
 <!-- Template for the products -->
 <script id="products-template" type="text/x-handlebars-template">
-	<div class="shadow-sm bg-white rounded-lg">
+	<div class="row shadow-sm bg-white rounded-lg">
 		{{#each this.products as |product|}}
-						<div class="iframediv"><iframe src="{{product.adPreviewUrl:MobileFeed}}"></iframe></div>
-
+		    <div class="col-sm">
+		<div class="iframediv"><iframe src="{{product.adPreviewUrl:MobileFeed}}"></iframe></div>
 			<div class="media border-bottom p-3" id="product-{{product.id}}">
 				<div class="media-body">
 					<h6 class="m-0">Spent: {{product.cost}}</h6>
@@ -35,6 +35,7 @@
 					<p class="m-0">Spent: {{product.cost}}</p>
 				</div>
 			</div>
+		</div>
 		{{/each}}
 		{{#unless this.products}}
 			<p class="p-5 text-center text-muted">No products found</p>
