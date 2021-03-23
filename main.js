@@ -14,10 +14,10 @@ document.addEventListener('DOMContentLoaded', function(event) {
 var projectUrl = 'https://api.sheety.co/a754727717e29386b98b0920c8596429/facebookAdsData';
 
 function loadProducts() {
-	fetch(projectUrl + '/sportsFemale')
+	fetch(projectUrl + '/products')
 	.then((response) => response.json())
 	.then(json => {
-		this.products = json.sportsFemale.sort((a, b) => {
+		this.products = json.products.sort((a, b) => {
 			return a.votes < b.votes;
 		})
 		showAllProducts();
