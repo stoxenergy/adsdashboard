@@ -1,12 +1,9 @@
 var products = null;
-var sportsFemale = null;
-var categories = null;
 var title = null;
 
 // Called once the page has loaded
 document.addEventListener('DOMContentLoaded', function(event) {
 	loadProducts();
-	loadCategories();
 });
 
 // Replace this with your Sheety URL
