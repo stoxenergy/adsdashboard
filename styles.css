@@ -40,3 +40,6 @@ iframe {
     box-sizing: border-box;
     overflow: visible;
 }
+.col-sm {
+	background-color: #f8f9fa;
+}
