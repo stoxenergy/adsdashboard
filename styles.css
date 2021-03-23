@@ -30,7 +30,15 @@ body, button, input, label, select, td, textarea {
 iframe {	
     border: none;
     width: 350px;
-    height: 650px;
+    height: 650px;	
+}
+.iframediv {
+    border: 1px solid #e9eaeb;
+    border-radius: 8px;
+    box-shadow: #e9eaeb 0 2px 8px;
+    box-sizing: border-box;
+    margin: 0 12px 12px 12px;
+    overflow: visible;
 }
 .ad {
     background-color: #fff;
