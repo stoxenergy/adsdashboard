@@ -66,7 +66,7 @@ iframe {
     background-position: -34px -273px;
 }
 .Learning {
-	background-position: 0px -273px;
+	background-position: 0px -273px !important;
 }
 ._9cd2 {
     margin-left: 6px;
