@@ -27,6 +27,7 @@
 	<div class="row shadow-sm bg-white rounded-lg">
 		{{#each this.products as |product|}}
 		    <div class="col-sm">
+		    <div class="ad">
 		    <div class="media p-3" id="product-{{product.id}}">
 				<div class="media-body">
 		    	<p class="m-0">Campaign: {{product.campaignName}}</p>
@@ -40,7 +41,7 @@
 					<p class="m-0">Revenue: {{product.websitePurchasesConversionValue}}</p>
 					<p class="m-0">ROAS: {{product.roas}}</p>
 				</div>
-			</div>
+			</div></div>
 		</div>
 		{{/each}}
 		{{#unless this.products}}
