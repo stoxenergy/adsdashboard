@@ -1,6 +1,8 @@
 var sports = null;
 var sportsWomen = null;
 var sportsMen = null;
+var DailyWomen = null;
+var DailyMen = null;
 var dailys = null;
 var dynamics = null;
 var existings = null;
@@ -73,30 +75,56 @@ function showAllSportsMen() {
 	drawSportsMen(this.sportsMen);
 }
 
-// Dailys
+// Daily Women
 
-function loadDailys() {
-	fetch(projectUrl + '/dailys')
+function loadDailyWomen() {
+	fetch(projectUrl + '/dailyWomen')
 	.then((response) => response.json())
 	.then(json => {
-		this.dailys = json.dailys.sort((a, b) => {
+		this.dailyWomen = json.dailyWomen.sort((a, b) => {
 			return a.votes < b.votes;
 		})
-		showAllDailys();
+		showAllDailyWomen();
 	});
 }
 
-function drawDailys(dailys) {
-	var template = Handlebars.compile(document.getElementById("dailys-template").innerHTML);
-	document.getElementById('dailys-container').innerHTML = template({
+function drawDailyWomen(dailyWomen) {
+	var template = Handlebars.compile(document.getElementById("daily-women-template").innerHTML);
+	document.getElementById('daily-women-container').innerHTML = template({
 		title: this.title,
-		dailys: dailys	
+		dailyWomen: dailyWomen	
 	});
 }
 
-function showAllDailys() {
-	this.title = "All Dailys";
-	drawDailys(this.dailys);
+function showAllDailyWomen() {
+	this.title = "All Daily Women";
+	drawDailyWomen(this.dailyWomen);
+}
+
+// Daily Men
+
+function loadDailyMen() {
+	fetch(projectUrl + '/dailyMen')
+	.then((response) => response.json())
+	.then(json => {
+		this.dailyMen = json.dailyMen.sort((a, b) => {
+			return a.votes < b.votes;
+		})
+		showAllDailyMen();
+	});
+}
+
+function drawDailyMen(dailyMen) {
+	var template = Handlebars.compile(document.getElementById("daily-men-template").innerHTML);
+	document.getElementById('daily-men-container').innerHTML = template({
+		title: this.title,
+		dailyMen: dailyMen	
+	});
+}
+
+function showAllDailyMen() {
+	this.title = "All Daily Men";
+	drawDailyMen(this.dailyMen);
 }
 
 // Dynamics
