@@ -60,17 +60,17 @@ function loadSportsMen() {
 	});
 }
 
-function drawSportsMen(sportsmen) {
+function drawSportsMen(sportsMen) {
 	var template = Handlebars.compile(document.getElementById("sports-men-template").innerHTML);
 	document.getElementById('sports-men-container').innerHTML = template({
 		title: this.title,
-		sportsmen: sportsmen	
+		sportsMen: sportsMen	
 	});
 }
 
 function showAllSportsMen() {
 	this.title = "All Sports Men";
-	drawSportsMen(this.sportsmen);
+	drawSportsMen(this.sportsMen);
 }
 
 // Dailys
