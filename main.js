@@ -53,7 +53,7 @@ function loadSportsMen() {
 	fetch(projectUrl + '/sportsMen')
 	.then((response) => response.json())
 	.then(json => {
-		this.sportsmen = json.sportsmen.sort((a, b) => {
+		this.sportsMen = json.sportsMen.sort((a, b) => {
 			return a.votes < b.votes;
 		})
 		showAllSportsMen();
