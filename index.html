@@ -49,7 +49,7 @@
 <script id="sports-men-template" type="text/x-handlebars-template">
 <div class="row"><div class="col-sm"><h2>Sports Men (COLD)</h2></div></div>
 	<div class="row shadow-sm rounded-lg">
-		{{#each this.sportsmen as |sport|}}
+		{{#each this.sportsMen as |sport|}}
 		    <div class="col-sm">
 		    <div class="ad">
 		    
@@ -66,7 +66,7 @@
 			</div>
 		</div>
 		{{/each}}
-		{{#unless this.sportsmen}}
+		{{#unless this.sportsMen}}
 			<p class="p-5 text-center text-muted">No products found</p>
 		{{/unless}}
 	</div>
