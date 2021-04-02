@@ -1,11 +1,11 @@
 var products = null;
-var existing = null;
+var existings = null;
 var title = null;
 
 // Called once the page has loaded
 document.addEventListener('DOMContentLoaded', function(event) {
 	loadProducts();
-	loadExisting();
+	loadExistings();
 });
 
 // Replace this with your Sheety URL
@@ -36,22 +36,22 @@ function showAllProducts() {
 	drawProducts(this.products);
 }
 
-function loadExisting() {
-	fetch(projectUrl + '/existing')
+function loadExistings() {
+	fetch(projectUrl + '/existings')
 	.then((response) => response.json())
 	.then(json => {
-		this.existing = json.existing.sort((a, b) => {
+		this.existings = json.existings.sort((a, b) => {
 			return a.votes < b.votes;
 		})
-		showAllExisting();
+		showAllExistings();
 	});
 }
 
-function drawExisting(existing) {
+function drawExistings(existings) {
 	var template = Handlebars.compile(document.getElementById("products-template").innerHTML);
 	document.getElementById('products-container').innerHTML = template({
 		title: this.title,
-		existing: existing	
+		existings: existings	
 	});
 }
 
