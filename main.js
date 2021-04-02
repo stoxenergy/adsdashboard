@@ -18,6 +18,34 @@ document.addEventListener('DOMContentLoaded', function(event) {
 // Make sure NOT to include the sheet name in the URL (just the project name!)
 var projectUrl = 'https://api.sheety.co/a754727717e29386b98b0920c8596429/facebookAdsData';
 
+// Sports
+
+function loadSports() {
+	fetch(projectUrl + '/sports')
+	.then((response) => response.json())
+	.then(json => {
+		this.sports = json.sports.sort((a, b) => {
+			return a.votes < b.votes;
+		})
+		showAllSports();
+	});
+}
+
+function drawSports(sports) {
+	var template = Handlebars.compile(document.getElementById("sports-template").innerHTML);
+	document.getElementById('sports-container').innerHTML = template({
+		title: this.title,
+		sports: sports	
+	});
+}
+
+function showAllSports() {
+	this.title = "All Sports";
+	drawSports(this.sports);
+}
+
+// Dailys
+
 function loadDailys() {
 	fetch(projectUrl + '/dailys')
 	.then((response) => response.json())
