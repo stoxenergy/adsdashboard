@@ -40,6 +40,14 @@
 			</div>
 		</div>
 		{{/each}}
+		{{#unless this.products}}
+			<p class="p-5 text-center text-muted">No products found</p>
+		{{/unless}}
+	</div>
+</script>
+	<!-- Template for the products -->
+<script id="existings-template" type="text/x-handlebars-template">
+	<div class="row shadow-sm bg-white rounded-lg">
 		<h1>Existing</h1>
 			{{#each this.existings as |existing|}}
 		    <div class="col-sm">
@@ -58,8 +66,8 @@
 			</div>
 		</div>
 		{{/each}}
-		{{#unless this.products}}
-			<p class="p-5 text-center text-muted">No products found</p>
+		{{#unless this.existings}}
+			<p class="p-5 text-center text-muted">No existings found</p>
 		{{/unless}}
 	</div>
 </script>
@@ -67,6 +75,13 @@
 <body class="bg-light">
 	<div id="menu-container"></div>
 	<div class="container-fluid" id="products-container">
+		<!-- Loading indicator: this gets replaced when we have products -->
+		<div class="text-center p-5 m-5">
+			<div class="text-muted p-2">Loading products...</div>
+			<div class="spinner-border text-primary" role="status"></div>
+		</div>
+	</div>
+	<div class="container-fluid" id="existings-container">
 		<!-- Loading indicator: this gets replaced when we have products -->
 		<div class="text-center p-5 m-5">
 			<div class="text-muted p-2">Loading products...</div>
