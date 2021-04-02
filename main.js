@@ -34,17 +34,17 @@ function loadSportsWomen() {
 	});
 }
 
-function drawSportsWomen(sportswomen) {
+function drawSportsWomen(sportsWomen) {
 	var template = Handlebars.compile(document.getElementById("sports-women-template").innerHTML);
 	document.getElementById('sports-women-container').innerHTML = template({
 		title: this.title,
-		sportswomen: sportswomen	
+		sportsWomen: sportsWomen	
 	});
 }
 
 function showAllSportsWomen() {
 	this.title = "All Sports Women";
-	drawSportsWomen(this.sportswomen);
+	drawSportsWomen(this.sportsWomen);
 }
 
 // Sports Men
