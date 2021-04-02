@@ -19,7 +19,32 @@
 <img class="logo" src="https://cdn.shopify.com/s/files/1/0079/4332/3745/files/LOGO-III_all-colours-png.png">
 	<img class="fblogo" src="/images/facebook_ads.svg">
 	</nav>
-
+<!-- Template for the dynamics -->
+<script id="dynamics-template" type="text/x-handlebars-template">
+<div class="row"><div class="col-sm"><h2>Dynamic (COLD)</h2></div></div>
+	<div class="row shadow-sm rounded-lg">
+		{{#each this.dynamics as |dynamic|}}
+		    <div class="col-sm">
+		    <div class="ad">
+		    
+		    <div class="media p-3" id="dynamic-{{dynamic.id}}">
+				<div class="media-body">
+				<div class="_7jv-"><i alt="" class="img sp_TCIOV7hgjyW_2x sx_f405b0 {{dynamic.status}}"></i><span style="font-family: -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; line-height: 16px; letter-spacing: normal; overflow-wrap: normal; text-align: left; color: rgb(28, 30, 33);"><div class="_9cd2">{{dynamic.status}}</div></span></div>
+		    	<p class="m-0">Campaign: {{dynamic.campaignName}}</p>
+			<p class="m-0">Ad Set: {{dynamic.adSetName}}</p>
+			<p class="m-0">ROAS: {{dynamic.roas}}</p>
+			<p class="m-0">Purchases: {{dynamic.websitePurchases}}</p>
+			</div>
+			</div>
+		<div class="iframediv"><iframe src="{{dynamic.adPreviewUrl:MobileFeed}}"></iframe></div>
+			</div>
+		</div>
+		{{/each}}
+		{{#unless this.dynamics}}
+			<p class="p-5 text-center text-muted">No products found</p>
+		{{/unless}}
+	</div>
+</script>
 <!-- Template for the retargetings -->
 <script id="retargetings-template" type="text/x-handlebars-template">
 <div class="row"><div class="col-sm"><h2>Retargeting (HOT)</h2></div></div>
