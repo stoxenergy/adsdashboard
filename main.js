@@ -38,6 +38,32 @@ function showAllProducts() {
 	drawProducts(this.products);
 }
 
+// Dynamics
+
+function loadDynamics() {
+	fetch(projectUrl + '/dynamics')
+	.then((response) => response.json())
+	.then(json => {
+		this.dynamics = json.dynamics.sort((a, b) => {
+			return a.votes < b.votes;
+		})
+		showAllDynamics();
+	});
+}
+
+function drawDynamics(dynamics) {
+	var template = Handlebars.compile(document.getElementById("dynamics-template").innerHTML);
+	document.getElementById('dynamics-container').innerHTML = template({
+		title: this.title,
+		dynamics: dynamics	
+	});
+}
+
+function showAllDynamics() {
+	this.title = "All Dynamics";
+	drawDynamics(this.dynamics);
+}
+
 // Retargetings
 
 function loadRetargetings() {
