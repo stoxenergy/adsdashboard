@@ -48,14 +48,14 @@ function loadExistings() {
 }
 
 function drawExistings(existings) {
-	var template = Handlebars.compile(document.getElementById("products-template").innerHTML);
-	document.getElementById('products-container').innerHTML = template({
+	var template = Handlebars.compile(document.getElementById("existings-template").innerHTML);
+	document.getElementById('existings-container').innerHTML = template({
 		title: this.title,
 		existings: existings	
 	});
 }
 
 function showAllExisting() {
-	this.title = "All Existing";
-	drawExistings(this.existing);
+	this.title = "All Existings";
+	drawExistings(this.existings);
 }
