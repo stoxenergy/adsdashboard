@@ -19,11 +19,11 @@
 <img class="logo" src="https://cdn.shopify.com/s/files/1/0079/4332/3745/files/LOGO-III_all-colours-png.png">
 	<img class="fblogo" src="/images/facebook_ads.svg">
 	</nav>
-<!-- Template for the sports -->
-<script id="sports-template" type="text/x-handlebars-template">
-<div class="row"><div class="col-sm"><h2>Sports (COLD)</h2></div></div>
+<!-- Template for the sportswomen -->
+<script id="sports-women-template" type="text/x-handlebars-template">
+<div class="row"><div class="col-sm"><h2>Sports Women (COLD)</h2></div></div>
 	<div class="row shadow-sm rounded-lg">
-		{{#each this.sports as |sport|}}
+		{{#each this.sportswomen as |sport|}}
 		    <div class="col-sm">
 		    <div class="ad">
 		    
@@ -40,7 +40,33 @@
 			</div>
 		</div>
 		{{/each}}
-		{{#unless this.sports}}
+		{{#unless this.sportswomen}}
+			<p class="p-5 text-center text-muted">No products found</p>
+		{{/unless}}
+	</div>
+</script>
+	<!-- Template for the sportsmen -->
+<script id="sports-men-template" type="text/x-handlebars-template">
+<div class="row"><div class="col-sm"><h2>Sports Men (COLD)</h2></div></div>
+	<div class="row shadow-sm rounded-lg">
+		{{#each this.sportsmen as |sport|}}
+		    <div class="col-sm">
+		    <div class="ad">
+		    
+		    <div class="media p-3" id="sport-{{sport.id}}">
+				<div class="media-body">
+				<div class="_7jv-"><i alt="" class="img sp_TCIOV7hgjyW_2x sx_f405b0 {{sport.status}}"></i><span style="font-family: -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; line-height: 16px; letter-spacing: normal; overflow-wrap: normal; text-align: left; color: rgb(28, 30, 33);"><div class="_9cd2">{{sport.status}}</div></span></div>
+		    	<p class="m-0">Campaign: {{sport.campaignName}}</p>
+			<p class="m-0">Ad Set: {{sport.adSetName}}</p>
+			<p class="m-0">ROAS: {{sport.roas}}</p>
+			<p class="m-0">Purchases: {{sport.websitePurchases}}</p>
+			</div>
+			</div>
+		<div class="iframediv"><iframe src="{{sport.adPreviewUrl:MobileFeed}}"></iframe></div>
+			</div>
+		</div>
+		{{/each}}
+		{{#unless this.sportsmen}}
 			<p class="p-5 text-center text-muted">No products found</p>
 		{{/unless}}
 	</div>
@@ -152,7 +178,14 @@
 </head>
 <body class="bg-light">
 	<div id="menu-container"></div>
-	<div class="container-fluid" id="sports-container">
+	div class="container-fluid" id="sports-women-container">
+		<!-- Loading indicator: this gets replaced when we have products -->
+		<div class="text-center p-5 m-5">
+			<div class="text-muted p-2">Loading products...</div>
+			<div class="spinner-border text-primary" role="status"></div>
+		</div>
+	</div>
+	<div class="container-fluid" id="sports-men-container">
 		<!-- Loading indicator: this gets replaced when we have products -->
 		<div class="text-center p-5 m-5">
 			<div class="text-muted p-2">Loading products...</div>
