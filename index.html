@@ -71,11 +71,11 @@
 		{{/unless}}
 	</div>
 </script>
-	<!-- Template for the dailys -->
+	<!-- Template for the daily women -->
 <script id="dailys-template" type="text/x-handlebars-template">
-<div class="row"><div class="col-sm"><h2>Daily (COLD)</h2></div></div>
+<div class="row"><div class="col-sm"><h2>Daily Women (COLD)</h2></div></div>
 	<div class="row shadow-sm rounded-lg">
-		{{#each this.dailys as |daily|}}
+		{{#each this.dailyWomen as |daily|}}
 		    <div class="col-sm">
 		    <div class="ad">
 		    
@@ -92,7 +92,33 @@
 			</div>
 		</div>
 		{{/each}}
-		{{#unless this.dailys}}
+		{{#unless this.dailyWomen}}
+			<p class="p-5 text-center text-muted">No products found</p>
+		{{/unless}}
+	</div>
+</script>
+	<!-- Template for the daily men -->
+<script id="dailys-template" type="text/x-handlebars-template">
+<div class="row"><div class="col-sm"><h2>Daily Men (COLD)</h2></div></div>
+	<div class="row shadow-sm rounded-lg">
+		{{#each this.dailyMen as |daily|}}
+		    <div class="col-sm">
+		    <div class="ad">
+		    
+		    <div class="media p-3" id="daily-{{daily.id}}">
+				<div class="media-body">
+				<div class="_7jv-"><i alt="" class="img sp_TCIOV7hgjyW_2x sx_f405b0 {{daily.status}}"></i><span style="font-family: -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; line-height: 16px; letter-spacing: normal; overflow-wrap: normal; text-align: left; color: rgb(28, 30, 33);"><div class="_9cd2">{{daily.status}}</div></span></div>
+		    	<p class="m-0">Campaign: {{daily.campaignName}}</p>
+			<p class="m-0">Ad Set: {{daily.adSetName}}</p>
+			<p class="m-0">ROAS: {{daily.roas}}</p>
+			<p class="m-0">Purchases: {{daily.websitePurchases}}</p>
+			</div>
+			</div>
+		<div class="iframediv"><iframe src="{{daily.adPreviewUrl:MobileFeed}}"></iframe></div>
+			</div>
+		</div>
+		{{/each}}
+		{{#unless this.dailyMen}}
 			<p class="p-5 text-center text-muted">No products found</p>
 		{{/unless}}
 	</div>
