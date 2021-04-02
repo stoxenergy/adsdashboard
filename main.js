@@ -1,4 +1,6 @@
 var sports = null;
+var sportsWomen = null;
+var sportsMen = null;
 var dailys = null;
 var dynamics = null;
 var existings = null;
@@ -7,7 +9,8 @@ var title = null;
 
 // Called once the page has loaded
 document.addEventListener('DOMContentLoaded', function(event) {
-	loadSports();
+	loadSportsWomen();
+	loadSportsMen();
 	loadDailys();
 	loadDynamics();
 	loadExistings();
@@ -18,30 +21,56 @@ document.addEventListener('DOMContentLoaded', function(event) {
 // Make sure NOT to include the sheet name in the URL (just the project name!)
 var projectUrl = 'https://api.sheety.co/a754727717e29386b98b0920c8596429/facebookAdsData';
 
-// Sports
+// Sports Women
 
-function loadSports() {
-	fetch(projectUrl + '/sports')
+function loadSportsWomen() {
+	fetch(projectUrl + '/sportsWomen')
 	.then((response) => response.json())
 	.then(json => {
-		this.sports = json.sports.sort((a, b) => {
+		this.sportswomen = json.sportswomen.sort((a, b) => {
 			return a.votes < b.votes;
 		})
-		showAllSports();
+		showAllSportsWomen();
 	});
 }
 
-function drawSports(sports) {
-	var template = Handlebars.compile(document.getElementById("sports-template").innerHTML);
-	document.getElementById('sports-container').innerHTML = template({
+function drawSportsWomen(sportswomen) {
+	var template = Handlebars.compile(document.getElementById("sports-women-template").innerHTML);
+	document.getElementById('sports-women-container').innerHTML = template({
 		title: this.title,
-		sports: sports	
+		sportswomen: sportswomen	
 	});
 }
 
-function showAllSports() {
-	this.title = "All Sports";
-	drawSports(this.sports);
+function showAllSportsWomen() {
+	this.title = "All Sports Women";
+	drawSportsWomen(this.sportswomen);
+}
+
+// Sports Men
+
+function loadSportsMen() {
+	fetch(projectUrl + '/sportsMen')
+	.then((response) => response.json())
+	.then(json => {
+		this.sportsmen = json.sportsmen.sort((a, b) => {
+			return a.votes < b.votes;
+		})
+		showAllSportsMen();
+	});
+}
+
+function drawSportsMen(sportsmen) {
+	var template = Handlebars.compile(document.getElementById("sports-men-template").innerHTML);
+	document.getElementById('sports-men-container').innerHTML = template({
+		title: this.title,
+		sportsmen: sportsmen	
+	});
+}
+
+function showAllSportsMen() {
+	this.title = "All Sports Men";
+	drawSportsMen(this.sportsmen);
 }
 
 // Dailys
