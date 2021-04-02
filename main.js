@@ -55,7 +55,7 @@ function drawExistings(existings) {
 	});
 }
 
-function showAllExisting() {
+function showAllExistings() {
 	this.title = "All Existings";
 	drawExistings(this.existings);
 }
