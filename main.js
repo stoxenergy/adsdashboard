@@ -1,11 +1,15 @@
-var products = null;
+var sports = null;
+var dailys = null;
+var dynamics = null;
 var existings = null;
 var retargetings = null;
 var title = null;
 
 // Called once the page has loaded
 document.addEventListener('DOMContentLoaded', function(event) {
-	loadProducts();
+	loadSports();
+	loadDailys();
+	loadDynamics();
 	loadExistings();
 	loadRetargetings();
 });
@@ -14,28 +18,28 @@ document.addEventListener('DOMContentLoaded', function(event) {
 // Make sure NOT to include the sheet name in the URL (just the project name!)
 var projectUrl = 'https://api.sheety.co/a754727717e29386b98b0920c8596429/facebookAdsData';
 
-function loadProducts() {
-	fetch(projectUrl + '/products')
+function loadDailys() {
+	fetch(projectUrl + '/dailys')
 	.then((response) => response.json())
 	.then(json => {
-		this.products = json.products.sort((a, b) => {
+		this.dailys = json.dailys.sort((a, b) => {
 			return a.votes < b.votes;
 		})
-		showAllProducts();
+		showAllDailys();
 	});
 }
 
-function drawProducts(products) {
-	var template = Handlebars.compile(document.getElementById("products-template").innerHTML);
-	document.getElementById('products-container').innerHTML = template({
+function drawDailys(dailys) {
+	var template = Handlebars.compile(document.getElementById("dailys-template").innerHTML);
+	document.getElementById('dailys-container').innerHTML = template({
 		title: this.title,
-		products: products	
+		dailys: dailys	
 	});
 }
 
-function showAllProducts() {
-	this.title = "All Products";
-	drawProducts(this.products);
+function showAllDailys() {
+	this.title = "All Dailys";
+	drawDailys(this.dailys);
 }
 
 // Dynamics
