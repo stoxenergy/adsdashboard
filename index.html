@@ -40,6 +40,23 @@
 			</div>
 		</div>
 		{{/each}}
+			{{#each this.existing as |existing|}}
+		    <div class="col-sm">
+		    <div class="ad">
+		    
+		    <div class="media p-3" id="product-{{existing.id}}">
+				<div class="media-body">
+				<div class="_7jv-"><i alt="" class="img sp_TCIOV7hgjyW_2x sx_f405b0 {{existing.status}}"></i><span style="font-family: -apple-system, system-ui, BlinkMacSystemFont, Arial, sans-serif; font-size: 12px; line-height: 16px; letter-spacing: normal; overflow-wrap: normal; text-align: left; color: rgb(28, 30, 33);"><div class="_9cd2">{{product.status}}</div></span></div>
+		    	<p class="m-0">Campaign: {{existing.campaignName}}</p>
+			<p class="m-0">Ad Set: {{existing.adSetName}}</p>
+			<p class="m-0">ROAS: {{existing.roas}}</p>
+			<p class="m-0">Purchases: {{existing.websitePurchases}}</p>
+			</div>
+			</div>
+		<div class="iframediv"><iframe src="{{existing.adPreviewUrl:MobileFeed}}"></iframe></div>
+			</div>
+		</div>
+		{{/each}}
 		{{#unless this.products}}
 			<p class="p-5 text-center text-muted">No products found</p>
 		{{/unless}}
