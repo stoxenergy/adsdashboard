@@ -1,8 +1,8 @@
 var sports = null;
 var sportsWomen = null;
 var sportsMen = null;
-var DailyWomen = null;
-var DailyMen = null;
+var dailyWomen = null;
+var dailyMen = null;
 var dailys = null;
 var dynamics = null;
 var existings = null;
@@ -13,7 +13,8 @@ var title = null;
 document.addEventListener('DOMContentLoaded', function(event) {
 	loadSportsWomen();
 	loadSportsMen();
-	loadDailys();
+	loadDailyWomen();
+	loadDailyMen();
 	loadDynamics();
 	loadExistings();
 	loadRetargetings();
