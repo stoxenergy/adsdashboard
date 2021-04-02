@@ -1,11 +1,13 @@
 var products = null;
 var existings = null;
+var retargetings = null;
 var title = null;
 
 // Called once the page has loaded
 document.addEventListener('DOMContentLoaded', function(event) {
 	loadProducts();
 	loadExistings();
+	loadRetargetings();
 });
 
 // Replace this with your Sheety URL
@@ -35,6 +37,34 @@ function showAllProducts() {
 	this.title = "All Products";
 	drawProducts(this.products);
 }
+
+// Retargetings
+
+function loadRetargetings() {
+	fetch(projectUrl + '/retargetings')
+	.then((response) => response.json())
+	.then(json => {
+		this.retargetings = json.retargetings.sort((a, b) => {
+			return a.votes < b.votes;
+		})
+		showAllRetargetings();
+	});
+}
+
+function drawRetargetings(retargetings) {
+	var template = Handlebars.compile(document.getElementById("retargetings-template").innerHTML);
+	document.getElementById('retargetings-container').innerHTML = template({
+		title: this.title,
+		retargetings: retargetings	
+	});
+}
+
+function showAllRetargetings() {
+	this.title = "All Retargetings";
+	drawRetargetings(this.retargetings);
+}
+
+// Existing
 
 function loadExistings() {
 	fetch(projectUrl + '/existings')
