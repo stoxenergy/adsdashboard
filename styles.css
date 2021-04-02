@@ -53,6 +53,8 @@ iframe {
 .col-sm {
 	background-color: #f8f9fa;
 	padding-bottom: 2rem;
+}
+.shadow-sm.col-sm {
 	max-width: min-content;
 }
 .sp_TCIOV7hgjyW_2x {
