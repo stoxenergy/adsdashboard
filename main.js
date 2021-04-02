@@ -57,5 +57,5 @@ function drawExistings(existings) {
 
 function showAllExisting() {
 	this.title = "All Existing";
-	drawProducts(this.existing);
+	drawExistings(this.existing);
 }
